@@ -45,7 +45,7 @@ class SimulationQ2(Simulation):
                             break
                     else:
                         dict[names[i]] = dict[names[i]] + 1
-        print(dict)
+
         return dict
         
 if __name__ == "__main__":
