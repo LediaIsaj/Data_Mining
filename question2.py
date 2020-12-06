@@ -25,28 +25,9 @@ class SimulationQ2(Simulation):
             Don't call `plot_histogram` in this method, we just want
             to compute the histogram bins counts!
         """
-        print(BINS)
         
-        names = []
-        for i in range(len(BINS)):
-            if i < len(BINS) - 1:
-                names.append(str(BINS[i]) + '-' + str(BINS[i+1]))
-            else:
-                names.append(str(BINS[i]) + '+')
-        dict = {k: 0 for k in names}
-
-        for data in self.backend_database:
-            for d in data:
-
-                for i in range(len(names)):
-                    if i < len(BINS)-1:
-                        if BINS[i] <= d < BINS[i + 1]:
-                            dict[names[i]]=dict[names[i]]+1
-                            break
-                    else:
-                        dict[names[i]] = dict[names[i]] + 1
-
-        return dict
+        flat_dur = [item for sublist in self.backend_database for item in sublist]
+        compute_histogram_bins(flat_dur, BINS)
         
 if __name__ == "__main__":
 
