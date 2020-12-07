@@ -1,0 +1,3 @@
+Exercise 1 -- Question 3
+We can notice that as the numbers of peers and peer pool size increases, the processing time to calculate the histogram bin counts incrases.
+Therefore, in the next step, question 4, we calculate these data before sending to back end, and then we just merge them.
